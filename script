@@ -1,0 +1,83 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Lógica para los botones principales de "Más información"
+    const mainButtons = document.querySelectorAll(".toggle-btn");
+
+    mainButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Encuentra el contenedor que este botón controla
+            const targetId = button.getAttribute("aria-controls");
+            const content = document.getElementById(targetId);
+
+            // Alterna la clase para mostrar/ocultar
+            if (content.classList.contains("content-hidden")) {
+                content.classList.remove("content-hidden");
+                content.classList.add("content-visible");
+                button.setAttribute("aria-expanded", "true");
+                button.textContent = "Ocultar información";
+            } else {
+                content.classList.remove("content-visible");
+                content.classList.add("content-hidden");
+                button.setAttribute("aria-expanded", "false");
+                button.textContent = "Más información";
+            }
+        });
+    });
+
+    // Lógica para los botones "Ver más" de las tarjetas (solo visibles en celular)
+    const smallButtons = document.querySelectorAll(".toggle-btn-small");
+
+    smallButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const description = btn.previousElementSibling; // Toma el párrafo .desc-text
+            
+            if (description.classList.contains("show")) {
+                description.classList.remove("show");
+                btn.textContent = "Ver más";
+            } else {
+                description.classList.add("show");
+                btn.textContent = "Ocultar";
+            }
+        });
+    });
+});document.addEventListener("DOMContentLoaded", () => {
+    // Lógica para los botones principales de "Más información"
+    const mainButtons = document.querySelectorAll(".toggle-btn");
+
+    mainButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Encuentra el contenedor que este botón controla
+            const targetId = button.getAttribute("aria-controls");
+            const content = document.getElementById(targetId);
+
+            // Alterna la clase para mostrar/ocultar
+            if (content.classList.contains("content-hidden")) {
+                content.classList.remove("content-hidden");
+                content.classList.add("content-visible");
+                button.setAttribute("aria-expanded", "true");
+                button.textContent = "Ocultar información";
+            } else {
+                content.classList.remove("content-visible");
+                content.classList.add("content-hidden");
+                button.setAttribute("aria-expanded", "false");
+                button.textContent = "Más información";
+            }
+        });
+    });
+
+    // Lógica para los botones "Ver más" de las tarjetas (solo visibles en celular)
+    const smallButtons = document.querySelectorAll(".toggle-btn-small");
+
+    smallButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const description = btn.previousElementSibling; // Toma el párrafo .desc-text
+            
+            if (description.classList.contains("show")) {
+                description.classList.remove("show");
+                btn.textContent = "Ver más";
+            } else {
+                description.classList.add("show");
+                btn.textContent = "Ocultar";
+            }
+        });
+    });
+});
